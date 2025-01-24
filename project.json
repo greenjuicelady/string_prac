@@ -4,7 +4,10 @@
   "description": "빈 프로세스",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[24.10.7]"
+    "UiPath.Excel.Activities": "[2.24.4]",
+    "UiPath.System.Activities": "[23.10.3]",
+    "UiPath.Testing.Activities": "[24.10.3]",
+    "UiPath.UIAutomation.Activities": "[24.10.5]"
   },
   "webServices": [],
   "entitiesStores": [],
