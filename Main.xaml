@@ -79,34 +79,35 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1020,2167" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1020,2813" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="554,2144" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="554,2790" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_path" />
-        <Variable x:TypeArguments="x:Int32" Name="idx" />
-        <Variable x:TypeArguments="x:String" Name="arr_path" />
         <Variable x:TypeArguments="x:String" Name="str_변수1" />
-        <Variable x:TypeArguments="x:String" Name="indx" />
+        <Variable x:TypeArguments="x:String" Name="str_변수2" />
+        <Variable x:TypeArguments="x:String" Name="str_변수3" />
+        <Variable x:TypeArguments="x:String" Name="str_ex7" />
+        <Variable x:TypeArguments="x:String" Name="str_주어진날짜" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,261" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,219" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="484,150" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="문자열실습" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="문자열실습" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -225,16 +226,42 @@
         </Assign.Value>
       </Assign>
       <ui:LogMessage DisplayName="ex6-1. TaxID: RO123456 중 RO123456 출력" sap:VirtualizedContainerService.HintSize="520,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[str_변수1.Split(&quot;:&quot;c)(1).Trim()]" />
-      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
-          <OutArgument x:TypeArguments="x:Int32">[idx]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[str_변수2]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:Int32">[str_변수1.IndexOf(":")]</InArgument>
+          <InArgument x:TypeArguments="x:String">Name: Bernard Buffet</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="ex6-1. TaxID: RO123456 중 RO123456 출력" sap:VirtualizedContainerService.HintSize="520,173" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[str_변수1.Substring(idx + 1).Trim()]" />
-      <ui:LogMessage Message="{x:Null}" DisplayName="ex6-2. Name: Bernard Buffet 중 Bernard Buffet 출력" sap:VirtualizedContainerService.HintSize="520,164" sap2010:WorkflowViewState.IdRef="LogMessage_10" />
+      <ui:LogMessage DisplayName="ex6-2. Name: Bernard Buffet 중 Bernard Buffet 출력" sap:VirtualizedContainerService.HintSize="520,173" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[str_변수2.Split(&quot; &quot;c)(2).Trim()]" />
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_변수3]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Address: 1116 Gyeongmyeong-daero, Gyeyang-gu, Incheon"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="ex6-3. Gyeyang-gu 추출" sap:VirtualizedContainerService.HintSize="520,173" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[str_변수3.Split(&quot;,&quot;c)(1).Trim()]" />
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_ex7]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Ad$%^aaA@@@aaA</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="ex7. ad$%aaa~~~aaa 바꿔 추출" sap:VirtualizedContainerService.HintSize="520,173" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[str_ex7.Replace(str_ex7,&quot;ad$%aaa~~~aaa&quot;)]" />
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_주어진날짜]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">2024-04-17</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="ex8. 3일 뒤 날짜로 추출" sap:VirtualizedContainerService.HintSize="520,164" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[str_주어진날짜.Replace(&quot;17&quot;,&quot;21&quot;)]" />
     </Sequence>
   </Sequence>
 </Activity>
