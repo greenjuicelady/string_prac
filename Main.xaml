@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -29,6 +29,7 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -79,13 +80,13 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1020,2813" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="903,3484" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="554,2790" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="554,3461" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_path" />
         <Variable x:TypeArguments="x:String" Name="str_변수1" />
@@ -93,21 +94,23 @@
         <Variable x:TypeArguments="x:String" Name="str_변수3" />
         <Variable x:TypeArguments="x:String" Name="str_ex7" />
         <Variable x:TypeArguments="x:String" Name="str_주어진날짜" />
+        <Variable x:TypeArguments="x:String" Name="str_변수4" />
+        <Variable x:TypeArguments="s:DateTime" Name="datetime_주어진날짜" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,219" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,261" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="484,150" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="문자열실습" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="문자열실습" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -244,6 +247,15 @@
         </Assign.Value>
       </Assign>
       <ui:LogMessage DisplayName="ex6-3. Gyeyang-gu 추출" sap:VirtualizedContainerService.HintSize="520,173" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[str_변수3.Split(&quot;,&quot;c)(1).Trim()]" />
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_변수4]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Time : 11:00 (AM)"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="ex6-4. AM 추출" sap:VirtualizedContainerService.HintSize="520,173" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[str_변수4.Split(&quot; &quot;c)(3).Replace(&quot;(&quot;,&quot;&quot;).Replace(&quot;)&quot;,&quot;&quot;)]" />
       <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_8">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_ex7]</OutArgument>
@@ -261,7 +273,31 @@
           <InArgument x:TypeArguments="x:String">2024-04-17</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="ex8. 3일 뒤 날짜로 추출" sap:VirtualizedContainerService.HintSize="520,164" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[str_주어진날짜.Replace(&quot;17&quot;,&quot;21&quot;)]" />
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_11">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[datetime_주어진날짜]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_주어진날짜, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[datetime_주어진날짜]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[datetime_주어진날짜.AddDays(3)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="520,114" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_주어진날짜]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[datetime_주어진날짜.ToString("yyyy-MM-dd")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="ex8. 3일 뒤 날짜로 추출" sap:VirtualizedContainerService.HintSize="520,164" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[str_주어진날짜]" />
     </Sequence>
   </Sequence>
 </Activity>
